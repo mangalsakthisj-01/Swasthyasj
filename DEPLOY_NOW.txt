@@ -1,0 +1,44 @@
+SWASTHYAGRID — QUICK DEPLOY
+
+1. Extract this ZIP.
+2. Create a new, empty GitHub repository (suggested: swasthyagrid-streamlit).
+3. GitHub > Add file > Upload files.
+4. Upload the extracted FILES directly to the repository root (do not upload the ZIP itself):
+   app.py
+   backend_services.py
+   backend_triage.py
+   requirements.txt
+   README.md
+   DEPLOY_NOW.txt
+   IMPLEMENTED_FEATURES.md
+   FEATURE_CATALOG.md (optional)
+   .gitignore (optional)
+5. Commit to branch: main
+6. Go to https://share.streamlit.io/
+7. Create app with:
+   Repository: your new repo
+   Branch: main
+   Main file path: app.py
+8. Click Deploy and keep the app logs open if an error appears.
+
+NEW FEATURES
+- Admin: create hotspot advisory, area, severity, precautions, source, expiry, optional map coordinates.
+- Clicking publish stores the advisory and queues persistent in-app notifications for Citizens in that area; 'All Areas' broadcasts to all active Citizen accounts.
+- Closing an advisory with a reason creates citizen closure-update notifications.
+- Field Officer: type a structured site-investigation report and attach site evidence.
+- PDFs: Citizens can download their own case PDF; Field Officers can download investigation PDFs; Admins and permitted Representatives can download permitted investigation reports.
+- Case assignment and operational status changes also create in-app messages.
+
+DEMO SIGN-IN
+Admin: admin / Admin@12345
+Field Officer: officer / Officer@12345
+Representative: representative / Rep@123456
+Citizen: citizen / Citizen@12345
+
+Optional Gemini AI image/text review:
+Add GEMINI_API_KEY in Streamlit Settings > Secrets. Never commit API keys to GitHub.
+
+NOTES
+- In-app notifications only; SMS/WhatsApp/email/push delivery is not configured.
+- SQLite in hosted ephemeral storage may be lost on restarts. Use durable hosted storage for production.
+- Demo credentials are public; do not use with real citizen information.
